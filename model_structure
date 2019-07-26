@@ -1,0 +1,38 @@
+Model Structure Planning
+
+Membership
+    -slug
+    -type(free pro enterprise)
+    -price
+    -stripe plan id
+
+
+
+UserMembership
+    -user           (foreign key to the default user)
+    -stripe customer id
+    -membership type     (foreign key to the membership)
+
+
+
+Subscription
+    -user membership
+    -stripe subscription        (foreign key to the Usermembership)
+    -active
+
+
+
+Course
+    -slug
+    -title
+    -description
+    -allowed membership         (foreign key to the membership)
+
+
+Lesson
+    -slug
+    -title
+    -Course           (foreign key to the courses)
+    -position
+    -video
+    -thumbnail
